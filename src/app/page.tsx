@@ -8,7 +8,7 @@ import { MARKETS, getNextMarketEvent, formatCountdown, isMarketOpen } from '@/li
 const ParticleEarthGlobe = lazy(() => import('@/components/ParticleEarthGlobe'));
 
 export default function Home() {
-  const [countdown, setCountdown] = useState({ hours: '--', minutes: '--', seconds: '--', days: undefined as string | undefined });
+  const [countdown, setCountdown] = useState<{ hours: string; minutes: string; seconds: string; days?: string }>({ hours: '--', minutes: '--', seconds: '--' });
   const [eventInfo, setEventInfo] = useState<{ market: string; type: 'open' | 'close' } | null>(null);
   const [isClient, setIsClient] = useState(false);
   const [openCount, setOpenCount] = useState(0);
